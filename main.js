@@ -1,4 +1,5 @@
-var strength = 0
+var strength = 0;
+var message = "";
 
 function checkNumber(password){
   for (var i=0;i<password.length;i++){
@@ -12,9 +13,9 @@ function checkNumber(password){
         || password[i] == "8"
         || password[i] == "9"
         || password[i] == "0"){
-      return true;
+      strength += 1;
     }
-    else return false;
+    else message += " missing number";
   }
 }
 
@@ -38,13 +39,12 @@ function checkCommon(password){
 
 }
 
-function displayStrength(){
+function checkPassword(){
   password = document.getElementById("Password").value;
-  if (checkNumber){
-
-  };
   checkLetter;
   checkSymbol;
   checkCharacters;
   checkCommon;
+  if (strength = 0)
+
 }
