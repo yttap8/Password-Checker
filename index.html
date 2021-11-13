@@ -4,13 +4,56 @@
     <meta charset="utf-8">
     <title></title>
     <script type="text/javascript" src = "main.js">
-
     </script>
+    <style media="screen">
+      body{
+        background-color: black;
+        font-family: 'ZCOOL KuaiLe', cursive;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+      }
+      h1{
+        background-color: red;
+        color: white;
+        font-size: 70px
+      }
+      button{
+        border-radius: 25px;
+        width: 200px;
+        height: 60px;
+        font-size: 40px;
+        font-family: 'ZCOOL KuaiLe', cursive;
+        background-color: white
+      }
+      input{
+        width:400px;
+        height:30px;
+      }
+      label{
+        text-decoration: underline;
+      }
+      img{
+        width: 150px;
+      }
+      p{
+        background-color: grey;
+        margin: auto;
+        height: 90px;
+        font-size: 50px
+      }
+    </style>
   </head>
   <body>
-    <label for="password">Enter Password:</label>
-    <input type="text" id= "Password" name="Password">
+    <h1>Super Cool Password Checker!!!!!!</h1>
+    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Lock-red.svg/645px-Lock-red.svg.png"></img>
+    <br><label for="password">Enter Password:</label>
+    <br><input type="text" id= "Password" name="Password">
+    <br><br>
     <button onclick = "checkPassword()" name="button">Check!</button>
+    <br><br>
+    <p style = "text-decoration: underline" >Feedback:</p>
     <p id = "Message"></p>
+    <p id = "Feedback"></p>
   </body>
 </html>

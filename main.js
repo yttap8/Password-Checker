@@ -1,6 +1,9 @@
+//Sets global variables for strength, the message that will be displayed, and the feedback that will be displayed about strength
 var strength = 0;
-var message = "Your Password Is:"
+var message = "";
+var feedback = "";
 
+//Checks if password has a number, adds to strength if true and adds to message if false
 function checkNumber(password){
   let hasNumber = false;
   for (var i=0;i<password.length;i++){
@@ -21,10 +24,11 @@ function checkNumber(password){
     strength += 2;
   }
   else if (hasNumber == false){
-    message += " missing number";
+    message += " missing number,";
   }
 }
 
+//checks if password has letter, adds to strength if true and adds to message if false
 function checkLetter(password){
   let hasLetter = false;
   for (var i=0;i<password.length;i++){
@@ -36,10 +40,11 @@ function checkLetter(password){
     strength += 2;
   }
   else if (hasLetter == false){
-    message += " missing letter";
+    message += " missing letter,";
   }
 }
 
+//checks if password includes one of the symbols : !@#$%^&*()?, adds to strength if true and adds to message if false
 function checkSymbol(password){
   let hasSpecial = false;
   for (var i=0;i<password.length;i++){
@@ -61,17 +66,19 @@ function checkSymbol(password){
       strength +=2;
     }
     else if (hasSpecial == false){
-      message += " missing special character";
+      message += " missing special character,";
     }
 }
 
+//checks if password is at least 8 characters, adds to strength if true and adds to message if false
 function checkCharacters(password){
   if (password.length >= 8){
     strength += 1;
   }
-else message += " less than eight characters"
+else message += " less than 8 characters,"
 }
 
+//checks if password includes a common password , subtracts from strength and adds to message if true
 function checkCommon(password){
   let isCommon = false;
   if (password == "password"
@@ -79,18 +86,20 @@ function checkCommon(password){
       || password == "123456789"
       || password == "0123456789"
       || password == "passcode"
+
       ){
     isCommon = true;
     }
   if (isCommon == true){
-    message += " common password";
+    message += " common,";
     strength -= 2;
   }
 }
 
 function checkPassword(){
   var password = document.getElementById("Password").value;
-  message = "Your Pasword Is:"
+  message = "";
+  feedback = "";
   strength = 0;
   checkNumber(password);
   checkLetter(password);
@@ -101,16 +110,18 @@ function checkPassword(){
     message = "Please Enter a Password";
   }
   else if (strength == 2){
-    message += " Very weak strength";
+    feedback += " VERY WEAK STRENGTH";
   }
   else if (strength == 2 || strength == 4 || strength == 6){
-    message += " Weak strength";
+    feedback += " WEAK STRENGTH";
   }
   else if (strength == 1 || strength == 3 || strength == 5){
-    message += " Moderate strength";
+    feedback += " MODERATE STRENGTH";
   }
   else if (strength == 7){
-    message += " Strong";
+    message = "Congratulations! Your password passed our test."
+    feedback += " STRONG";
   }
   document.getElementById("Message").innerHTML = message;
+  document.getElementById("Feedback").innerHTML = feedback;
 }
