@@ -114,6 +114,7 @@ function checkCommon(password){
   }
 }
 
+//gets password from user input, runs all functions to check it, displays different messages depending on different strengths
 function checkPassword(){
   var password = document.getElementById("Password").value;
   message = "";
