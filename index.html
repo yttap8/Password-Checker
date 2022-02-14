@@ -7,22 +7,24 @@
     </script>
     <style media="screen">
       body{
-        background-color: black;
+        background-color: beige;
         font-family: 'ZCOOL KuaiLe', cursive;
         text-align: center;
-        color: white;
+        color: black;
         font-size: 30px;
       }
-      h1{
-        background-color: red;
+      .header {
+        padding: 10px;
+        text-align: center;
+        background: #1abc9c;
         color: white;
-        font-size: 70px
+        font-size: 20px;
       }
       button{
         border-radius: 25px;
         width: 200px;
         height: 60px;
-        font-size: 40px;
+        font-size: 30px;
         font-family: 'ZCOOL KuaiLe', cursive;
         background-color: white
       }
@@ -36,26 +38,29 @@
       img{
         width: 150px;
       }
-      p{
-        background-color: grey;
-        margin: auto;
-        height: 90px;
-        font-size: 40px
+      .results{
+        border-style: dotted;
       }
     </style>
   </head>
   <body>
-    <h1>Super Cool Not Suspicious Password Checker!!!!!!</h1>
+    <div class="header">
+      <h1>Super Cool Highly Secure Password Checker!!!!!!</h1>
+      <h3>Patrick Wu AP CSP</h3>
+    </div>
     <br><label for="password">Enter Password:</label>
     <br><input type="text" id= "Password" name="Password">
     <br><br>
     <button onclick = "checkPassword()" name="button">Check!</button>
     <br><button onclick = "displayRndPass()" name = "button" style = "width: 500px; font-size: 30px">Generate Random Password!</button>
     <br><br>
-    <p style = "text-decoration: underline" >Results:</p>
-    <p id = "Message"></p>
-    <p id = "Feedback"></p>
-    <p id = "RndPass" style = "background-color: red"></p>
+    <div class="results">
+      <p style = "text-decoration: underline" >Results:</p>
+      <p id = "Message"></p>
+      <p id = "Feedback"></p>
+      <p id = "RndPass"></p>
+    </div>
+
 
   </body>
 </html>
